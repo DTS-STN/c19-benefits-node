@@ -40,7 +40,7 @@ jobs:
         with:
           app-name: 'EsPbDtsCb19AppService'
           slot-name: 'dev'
-          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19-benefit:dev-'${{ steps.findPr.outputs.pr }}
+          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19-benefit:dev-${{ steps.findPr.outputs.pr }}'
 
       - name: Azure logout
         run: |
