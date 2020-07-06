@@ -29,7 +29,7 @@ jobs:
         run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19-benefit:dev-${{ github.sha }}
 
       - name: Push container to Azure Container Registry
-        run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19-benefit
+        run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19-benefit:dev-${{ github.sha }}
 
       - uses: azure/webapps-container-deploy@v1
         with:
