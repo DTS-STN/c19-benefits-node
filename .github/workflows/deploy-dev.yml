@@ -10,11 +10,6 @@ jobs:
         uses: actions/checkout@master
         with: 
           fetch-depth: '0'
-      
-      - uses: jwalton/gh-find-current-pr@v1
-        id: findPr
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 'Login via Azure CLI'
         uses: azure/login@v1
@@ -28,10 +23,10 @@ jobs:
           password: ${{ secrets.AZURE_CONTAINER_REGISTRY_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }} --build-arg TAG_VERSION=dev-${{ steps.findPr.outputs.pr }} .
+        run: docker build -t base --build-arg GITHUB_SHA_ARG=${{ github.sha }} --build-arg TAG_VERSION=dev-${{ github.sha }} .
 
       - name: Tag :steps.tag.output.new_tag
-        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19-benefit:dev-${{ steps.findPr.outputs.pr }}
+        run: docker tag base $AZURE_CONTAINER_REGISTRY_SERVER/cv-19-benefit:dev-${{ github.sha }}
 
       - name: Push container to Azure Container Registry
         run: docker push $AZURE_CONTAINER_REGISTRY_SERVER/cv-19-benefit
@@ -40,7 +35,7 @@ jobs:
         with:
           app-name: 'EsPbDtsCb19AppService'
           slot-name: 'dev'
-          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19-benefit:dev-${{ steps.findPr.outputs.pr }}'
+          images: '${{ secrets.AZURE_CONTAINER_REGISTRY_SERVER }}/cv-19-benefit:dev-${{ github.sha }}'
 
       - name: Azure logout
         run: |
