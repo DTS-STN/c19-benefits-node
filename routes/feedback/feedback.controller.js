@@ -33,7 +33,7 @@ module.exports = (app, route) => {
       language: res.locals.getLocale(),
     }
 
-    if (req.locals.featureFlags.enableFreetext) {
+    if (req.locals.featureFlags.enableFreeText) {
       feedback.details =  req.body.details || 'n/a'
     } else {
       feedback.details =  'disabled'
