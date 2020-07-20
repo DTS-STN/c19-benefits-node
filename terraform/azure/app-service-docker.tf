@@ -24,7 +24,8 @@ resource "azurerm_app_service" "app_service" {
     #"DOCKER_REGISTRY_SERVER_PASSWORD" = azurerm_container_registry.container_registry.admin_password
     "DOCKER_REGISTRY_SERVER_PASSWORD" = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault.key_vault.vault_uri}secrets/${azurerm_key_vault_secret.docker_password.name}/${azurerm_key_vault_secret.docker_password.version})"
     "SLOT_NAME"                       = "default"
-
+    "AIRTABLE_API_KEY"                = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault.key_vault.vault_uri}secrets/${azurerm_key_vault_secret.airtable_api_key.name}/${azurerm_key_vault_secret.airtable_api_key.version})"
+    "AIRTABLE_BASE_ID"                = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault.key_vault.vault_uri}secrets/${azurerm_key_vault_secret.airtable_base_id.name}/${azurerm_key_vault_secret.airtable_base_id.version})"
   }
 
   logs {
