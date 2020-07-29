@@ -3,12 +3,12 @@
 {% set sectionId = 'dtc_allowance' %}
 
 {% block header %}
-  {{__("dtc_allowance.header")}}
+  {{__("dtc.title")}}
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>$100 one-time, tax-free payment</strong> if you receive <strong>The Allowance or the Allowance for the Survivor.</strong>") }}
-  {{ benefitLi("<strong>Automatic payment starting August 10, 2020.</strong>") }}
+  {{ benefitLi("<strong>$100 one-time, tax-free payment if you receive The Allowance or the Allowance for the Survivor.</strong>") }}
+  {{ benefitLi("<strong>Automatic payment starting in August.</strong>") }}
 {% endblock %}
 
 {% block body %}
@@ -22,7 +22,7 @@
 {% block info_link %}
   {{ infoLink(
     "dtc_allowance",
-    "https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html",
+    "https://www.canada.ca/en/services/benefits/covid19-emergency-benefits/one-time-payment-persons-disabilities.html",
     "Learn more about the Disability Tax Credit"
   )}}
 {% endblock %}

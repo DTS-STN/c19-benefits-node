@@ -17,10 +17,10 @@
                 </span>
             {% endif %}
             {% if attributes.bullets %}
-                <span class="" id="{{ key }}-list">
-                    <ul>
+                <span id="{{ key }}-list">
+                    <ul class="form-bullet dashed" >
                         {% for item in attributes.bullets %}
-                            <li>{{ item }}</li>
+                            <li style="padding-top: 15px" >{{ item }}</li>
                         {% endfor %}
                     </ul>
                 </span>
