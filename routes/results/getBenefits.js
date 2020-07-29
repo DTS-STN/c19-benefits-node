@@ -158,18 +158,18 @@ const getBenefits = (data, featureFlags) => {
   if (featureFlags.enableDtc){
 
     // DTC Benefits
-    results.push(match(data, { oas: 'oas', dtc: 'yourself', dtc_a: 'yes' }, 'dtc_oas'))
-    results.push(match(data, { dtc: 'yourself', dtc_a: 'no' }, 'dtc_apply'))
-    results.push(match(data, { oas: 'no', dtc: 'yourself', dtc_a: 'yes' }, 'dtc_individual'))
+    results.push(match(data, { oas: 'oas', dtc: 'yourself', dtc_individual: 'yes' }, 'dtc_oas'))
+    results.push(match(data, { dtc: 'yourself', dtc_individual: 'no' }, 'dtc_apply'))
+    results.push(match(data, { oas: 'no', dtc: 'yourself', dtc_individual: 'yes' }, 'dtc_individual'))
     results.push(
       match(
         data,
-        { oas: ['allowance', 'survivor'], dtc: 'yourself', dtc_a: 'yes' },
+        { oas: ['allowance', 'survivor'], dtc: 'yourself', dtc_individual: 'yes' },
         'dtc_allowance',
       ),
     )
-    results.push(match(data, { dtc: 'child', dtc_b: 'yes' }, 'dtc_child'))
-    results.push(match(data, { dtc: 'child', dtc_b: 'no' }, 'dtc_apply'))
+    results.push(match(data, { dtc: 'child', dtc_child: 'yes' }, 'dtc_child'))
+    results.push(match(data, { dtc: 'child', dtc_child: 'no' }, 'dtc_apply'))
 
   }
 

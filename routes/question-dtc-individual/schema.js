@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 
 const Schema = {
-  dtc_a: {
+  dtc_individual: {
     isIn: {
       errorMessage: 'errors.multipleChoiceGeneric',
       options: [['yes', 'no']],

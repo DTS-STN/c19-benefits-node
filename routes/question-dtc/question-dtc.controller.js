@@ -14,9 +14,9 @@ module.exports = (app, route) => {
 
       let path
       if (req.body.dtc === "yourself") {
-        path = res.locals.routePath('question-dtc-a')
+        path = res.locals.routePath('question-dtc-individual')        
       } else if (req.body.dtc === "child") {
-        path = res.locals.routePath('question-dtc-b')
+        path = res.locals.routePath('question-dtc-child')
       } else {
         path = res.locals.routePath('prepare')
       }

@@ -9,13 +9,13 @@
                   name="_csrf"
                   value="{{ csrfToken }}">
 
-            {{ radioButtons('dtc_b',
+            {{ radioButtons('dtc_child',
                 [
-                    { value: 'yes', text:__('dtc-b.yes') },
-                    { value: 'no', text:__('dtc-b.no') }
+                    { value: 'yes', text:__('dtc-child.yes') },
+                    { value: 'no', text:__('dtc-child.no') }
                 ],
-                data.dtc_b,
-                __('form.dtc-b'),
+                data.dtc_child,
+                __('form.dtc-child'),
                 errors,
                 {
                     required: true
