@@ -28,6 +28,10 @@ const routes = [
 
   { name: 'question-reduced-income', path: { en: '/reduced-income', fr: '/revenu-partiel' } },
 
+  // dtc fork
+  { name: 'question-dtc-a', path: { en: '/dtc-a', fr: '/ciph-a' } },
+  { name: 'question-dtc-b', path: { en: '/dtc-b', fr: '/ciph-b' } },
+
   // feedback
   { name: 'feedback', path: { en: '/feedback', fr: '/feedback' } },
   { name: 'feedback-thanks', path: { en: '/thanks', fr: '/merci' } },
