@@ -170,7 +170,7 @@ describe('Paths and Benefits', () => {
         cy.get('#dtc_child')
       })
 
-      it('dtc-allowance', () => {
+      it('dtc-apply', () => {
         cy.answerInput('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
@@ -178,27 +178,13 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#ccbno')
         cy.answerRB('#student_debtno')
         cy.answerRB('#plans_for_schoolno')
-        cy.answerRB('#oasallowance')
+        cy.answerRB('#oasno')
         cy.answerRB('#dtcyourself')
-        cy.answerRB('#dtc_individualyes')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
-        cy.get('#dtc_allowance')
+        cy.answerRB('#dtc_individualno')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('#dtc_apply')
       })
 
-      it('dtc-allowance-survivor', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
-        cy.answerRB('#lost_joblost-no-income')
-        cy.answerRB('#unchanged_incomenone-of-the-above')
-        cy.answerRB('#mortgage_paymentsno')
-        cy.answerRB('#ccbno')
-        cy.answerRB('#student_debtno')
-        cy.answerRB('#plans_for_schoolno')
-        cy.answerRB('#oassurvivor')
-        cy.answerRB('#dtcyourself')
-        cy.answerRB('#dtc_individualyes')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
-        cy.get('#dtc_allowance')
-      })
       it('dtc-oas', () => {
         cy.answerInput('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')

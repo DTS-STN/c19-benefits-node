@@ -114,9 +114,9 @@ form {
     color: $color-grey-dark;
   }
 
-  // .form-bullet {
-  //   padding: 0;
-  // }
+  .form-bullet {
+    padding: 0;
+  }
 
   .validation-message {
     font-weight: 400;
@@ -248,22 +248,6 @@ form {
       width: 25%;
       max-width: 7.5ch;
     }
-  }
-
-  ul {
-    padding: 5px;
-  }
-
-  ul.dashed {
-    list-style-type: none;
-  }
-
-  ul.dashed > li {
-    text-indent: -5px;
-  }
-
-  ul.dashed > li:before {
-    content: "- ";
   }
 }
 

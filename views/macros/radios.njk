@@ -17,13 +17,21 @@
                 </span>
             {% endif %}
             {% if attributes.bullets %}
-                <span id="{{ key }}-list">
-                    <ul class="form-bullet dashed" >
+                <div id="{{ key }}-list">
+                    <ul class="" >
                         {% for item in attributes.bullets %}
-                            <li style="padding-top: 15px" >{{ item }}</li>
+                            <li style="" >{{ item }}</li>
                         {% endfor %}
+
+                        {% if attributes.subBullets %}
+                            <ul class="">
+                                {% for item in attributes.subBullets %}
+                                <li style="" >{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </ul>
-                </span>
+                </div>
             {% endif %}
             <div class="multiple-choice multiple-choice--radios" id="{{ key }}">
                 {% for item in values %}
