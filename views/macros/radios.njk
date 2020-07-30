@@ -20,16 +20,8 @@
                 <div id="{{ key }}-list">
                     <ul class="" >
                         {% for item in attributes.bullets %}
-                            <li style="" >{{ item }}</li>
+                            <li style="" >{{ item | safe}}</li>
                         {% endfor %}
-
-                        {% if attributes.subBullets %}
-                            <ul class="">
-                                {% for item in attributes.subBullets %}
-                                <li style="" >{{ item }}</li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
                     </ul>
                 </div>
             {% endif %}
