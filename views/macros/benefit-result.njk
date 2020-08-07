@@ -1,8 +1,8 @@
-{% macro benefitLi(text) %}
+{% macro benefitLi(block) %}
   <li>
     <div>
         <img src="{{ asset('/img/check-circle.svg') }}" alt="">
-         {% if text %}{{ text | safe }}{% endif %}
+         {% if block %}{{ block | safe }}{% endif %}
     </div>
   </li>
 {% endmacro %}

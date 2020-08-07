@@ -1,0 +1,33 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'oas' %}
+
+{% block header %}
+  {{__("oas.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<uL>
+      <li class='mb-4'><strong>" + __('results.oas.desc1') + "</strong></li>
+      <li class='mb-4'><strong>" + __('results.oas.desc2') + "</strong></li>
+      <li class='mb-4'><strong>" + __('results.oas.desc3') + "</strong></li>
+    </ul>") }}
+  {{ benefitLi("<strong>" + __('results.oas.desc4') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong> {{ __('results.good_to_know') }} </strong>
+  <ul>
+    <li> {{ __('results.oas.good_to_know1') }} </li>
+    <li> {{ __('results.oas.good_to_know2') }} </li>
+    <li> {{ __('results.oas.good_to_know3') }} </li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "oas",
+    __('results.oas.infolink'),
+    __('results.oas.infolink_text')
+  )}}
+{% endblock %}

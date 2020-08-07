@@ -216,5 +216,19 @@
   "your_situation.unchanged_income.3": "You’re retired.",
   "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
   "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021.",
-  "your_situation.unchanged_income.none": "None of the above."
+  "your_situation.unchanged_income.none": "None of the above.",
+  "results.good_to_know": "Good to know:",
+  "results.oas.desc1": "$300 one-time, tax-free payment if you are eligible for the Old Age Security (OAS) pension",
+  "results.oas.desc2": "OR $500 one-time, tax-free payment if you receive the Guaranteed Income Supplement (GIS)",
+  "results.oas.desc3": "OR $500 one-time, tax-free payment if you receive the Allowance or the Allowance for the Survivor",
+  "results.oas.desc4": "Starting July 6, 2020",
+  "results.oas.good_to_know1": "You’ll receive this payment if you are eligible to receive OAS or its related benefits in June 2020.",
+  "results.oas.good_to_know2": "You become eligible for OAS the month after you turn 65. So if you turn 65 in June, you will not receive this one-time payment.",
+  "results.oas.good_to_know3": "Payments will be sent automatically, starting July 6, 2020. You don’t need to do anything to receive it.",
+  "results.oas.infolink": "https://www.canada.ca/en/services/benefits/publicpensions/notice-covid-19/one-time-payment.html",
+  "results.oas.infolink_text": "Learn more about help for seniors",
+  "results.ccb_payment.desc1": "Automatic payment in May",
+  "results.ccb_payment.desc2": "$300 per child",
+
+  "": ""
 }

@@ -216,5 +216,17 @@
   "your_situation.unchanged_income.3": "Vous êtes retraité.",
   "your_situation.unchanged_income.4": "Vous étiez étudiant dans une institution postsecondaire lors de l’année scolaire 2019-20 et ne pouvez trouver un emploi.",
   "your_situation.unchanged_income.5": "Vous obtiendrez un diplôme d’études secondaires pour l’année scolaire 2019-2020 et avez appliqué pour un programme d’études postsecondaires débutant avant le 1er février 2021.",
-  "your_situation.unchanged_income.none": "Aucune de ces options."
+  "your_situation.unchanged_income.none": "Aucune de ces options.",
+  "results.good_to_know": "Bon à savoir :",
+  "results.oas.desc1": "Paiement unique de 300 $, non imposable, si vous êtes admissible à la pension de la Sécurité de vieillesse (SV)",
+  "results.oas.desc2": "OU paiement unique de 500 $, non imposable, si vous recevez le supplément de revenu garanti (SRG)",
+  "results.oas.desc3": "OU paiement unique de 500 $, non imposable, si vous recevez L’Allocation ou l’Allocation au survivant",
+  "results.oas.desc4": "Dès le 6 juillet 2020",
+  "results.oas.good_to_know1": "Vous recevrez ce paiement si vous êtes admissible à la pension ou aux programmes connexes de la SV en juin 2020.",
+  "results.oas.good_to_know2": "Vous devenez admissibles à la pension de la SV le mois suivant votre 65ème anniversaire. Si votre 65ème anniversaire est en juin 2020, vous ne recevrez pas ce paiement.",
+  "results.oas.good_to_know3": "Les paiements seront déposés automatiquement dès le 6 juillet. Vous n’avez pas à faire quoi que ce soit pour le recevoir.",
+  "results.oas.infolink": "https://www.canada.ca/fr/services/prestations/pensionspubliques/avis-covid-19/paiement-unique.html",
+  "results.oas.infolink_text": "En savoir plus à propos de l’aide pour les aînés",
+
+  "": ""
 }
