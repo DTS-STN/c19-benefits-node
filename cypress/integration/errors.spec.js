@@ -42,6 +42,10 @@ describe('Error Pages', () => {
         testError('question-cerb', lang)
       })
 
+      it('CERB exhausted', () => {
+        testError('question-cerb-exhausted', lang)
+      })
+
       it('Mortgage Payments', () => {
         testError('question-mortgage-payments', lang)
       })

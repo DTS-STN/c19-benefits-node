@@ -22,6 +22,7 @@ const routes = [
   { name: 'results', path: { en: '/results', fr: '/resultats' } },
 
   // qualified for cerb exhaust
+  { name: 'question-cerb-exhausted', path: { en: '/cerb-exhausted', fr: '/pcu-epuiser' } },
 
   // retirees only
   { name: 'question-rrif', path: { en: '/RRIF', fr: '/FERR' } },
