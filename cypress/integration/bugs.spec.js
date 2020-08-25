@@ -1,5 +1,3 @@
-const { cy } = require("date-fns/locale")
-
     /* eslint-disable no-undef */
 describe('Found Bugs', () => {
   describe('Issue #378 - Bug showing CERB twice when going back and forth', () => {
