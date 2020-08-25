@@ -1,3 +1,5 @@
+const { cy } = require("date-fns/locale")
+
     /* eslint-disable no-undef */
 describe('Found Bugs', () => {
   describe('Issue #378 - Bug showing CERB twice when going back and forth', () => {
@@ -11,6 +13,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#lost_joblost-some-income')
       cy.answerRB('#some_incomeemployed-lost-a-job')
       cy.answerRB('#reduced_income1000_or_less')
+      cy.answerRB('#cerbnot-receiving-cerb')
       cy.answerRB('#mortgage_paymentsno')
       cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')
@@ -22,6 +25,7 @@ describe('Found Bugs', () => {
       cy.visit('/en/lost-job')
       cy.answerRB('#lost_joblost-all-income')
       cy.answerRB('#no_incomelost-job')
+      cy.answerRB('#cerbnot-receiving-cerb')
       cy.answerRB('#mortgage_paymentsno')
       cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')
@@ -38,6 +42,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#some_incomeretired')
       cy.answerRB('#gross_income4999_or_less')
       cy.answerRB('#rrifyes')
+      cy.answerRB('#cerbnot-receiving-cerb')
       cy.answerRB('#mortgage_paymentsno')
       cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')
@@ -49,6 +54,7 @@ describe('Found Bugs', () => {
 
       cy.visit('/en/your-situation/some-income')
       cy.answerRB('#some_incomequarantine')
+      cy.answerRB('#cerbnot-receiving-cerb')
       cy.answerRB('#mortgage_paymentsno')
       cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')
@@ -65,6 +71,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#some_incomeretired')
       cy.answerRB('#gross_incomeover_5k')
       cy.answerRB('#rrifyes')
+      cy.answerRB('#cerbnot-receiving-cerb')
       cy.answerRB('#mortgage_paymentsno')
       cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')
@@ -77,6 +84,7 @@ describe('Found Bugs', () => {
       cy.visit('/en/lost-job')
       cy.answerRB('#lost_joblost-no-income')
       cy.answerRB('#unchanged_incomepaid-leave')
+      cy.answerRB('#cerbnot-receiving-cerb')
       cy.answerRB('#mortgage_paymentsno')
       cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')

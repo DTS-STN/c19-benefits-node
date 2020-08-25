@@ -38,6 +38,10 @@ describe('Error Pages', () => {
         testError('question-your-situation-unchanged-income', lang)
       })
 
+      it('CERB', () => {
+        testError('question-cerb', lang)
+      })
+
       it('Mortgage Payments', () => {
         testError('question-mortgage-payments', lang)
       })
