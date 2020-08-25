@@ -4,6 +4,7 @@ import accessibleAutocomplete from 'accessible-autocomplete'
 
 accessibleAutocomplete.enhanceSelectElement({
   selectElement: document.querySelector('#province-select'),
+  autoselect: false,
   showAllValues: true,
   showNoOptionsFound: false,
   dropdownArrow: () => {
