@@ -1,6 +1,17 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-08-25
+
+### Changed
+* Removed auto-complete from province dropdown 
+* Replaced "You were a college or university student during the 2019-20 school year and now cannot find work.” option 
+with “Your child or dependent’s school, daycare or care facility is closed due to COVID-19.” 
+in Your Situation - No Income and Your Situation - Some Income questions.
+* Removed CESB calculation scenarios pertaining to the
+"You were a college or university student during the 2019-20 school year and now cannot find work.” option on Your Situation
+questions.
+
 ## 2020-08-21
 
 ### Changed

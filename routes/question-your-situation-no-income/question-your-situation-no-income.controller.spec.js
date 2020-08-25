@@ -26,7 +26,7 @@ describe('Test redirects for no-income ', () => {
         'unpaid-leave-to-care',
         'sick-or-quarantined',
         'parental-recently-cant-return',
-        'student_2019_20',
+        'child-or-dependent-school-closed',
         'ei-recently-claim-ended',
         'none-of-the-above',
       ],

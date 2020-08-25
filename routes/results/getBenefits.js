@@ -114,19 +114,8 @@ const getBenefits = (data, featureFlags) => {
     match(
       data,
       {
-        lost_job: 'lost-all-income',
-        no_income: 'student_2019_20',
-      },
-      'cesb',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
         lost_job: 'lost-no-income',
-        unchanged_income: ['student_2019_20', 'high_school_grad'],
+        unchanged_income: ['high_school_grad'],
       },
       'cesb',
     ),
@@ -161,7 +150,7 @@ const getBenefits = (data, featureFlags) => {
     results.push(match(data, { oas: ['oas', 'allowance', 'survivor'], dtc: 'yourself', dtc_individual: 'yes' }, 'dtc_oas'))
     results.push(match(data, { dtc: 'yourself', dtc_individual: 'no' }, 'dtc_apply'))
     results.push(match(data, { oas: 'no', dtc: 'yourself', dtc_individual: 'yes' }, 'dtc_individual'))
-    
+
     results.push(match(data, { dtc: 'child', dtc_child: 'yes' }, 'dtc_child'))
     results.push(match(data, { dtc: 'child', dtc_child: 'no' }, 'dtc_apply'))
   }

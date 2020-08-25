@@ -18,7 +18,7 @@ describe('Test the getBenefits calculator', () => {
       lost_job: 'lost-all-income',
       no_income: 'employer-closed',
     })
-    
+
     expect(result).toContain('cerb')
   })
 
@@ -165,28 +165,10 @@ describe('Test the getBenefits calculator', () => {
     })
   })
 
-  test('It checks for cesb no-income student_2019_20', () => {
-    const result = getBenefits({
-      lost_job: 'lost-all-income',
-      no_income: 'student_2019_20',
-    })
-
-    expect(result).toContain('cesb')
-  })
-
   test('It checks for cesb unchanged-income high_school_grad', () => {
     const result = getBenefits({
       lost_job: 'lost-no-income',
       unchanged_income: 'high_school_grad',
-    })
-
-    expect(result).toContain('cesb')
-  })
-
-  test('It checks for cesb unchanged-income', () => {
-    const result = getBenefits({
-      lost_job: 'lost-no-income',
-      unchanged_income: 'student_2019_20',
     })
 
     expect(result).toContain('cesb')

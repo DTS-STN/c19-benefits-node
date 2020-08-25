@@ -12,6 +12,7 @@ const Schema = {
           'retired',
           'quarantine',
           'none-of-the-above',
+          'child-or-dependent-school-closed',
         ],
       ],
     },
