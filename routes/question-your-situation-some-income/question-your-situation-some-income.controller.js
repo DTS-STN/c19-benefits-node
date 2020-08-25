@@ -25,6 +25,7 @@ const postSomeIncome = (req, res) => {
       'hours-reduced',
       'selfemployed-some-income',
       'employed-lost-a-job',
+      'child-or-dependent-school-closed',
     ].includes(req.body.some_income)
   ) {
     pruneSessionData(req, ['gross-income', 'rrif'])
@@ -33,7 +34,7 @@ const postSomeIncome = (req, res) => {
 
   if (['quarantine','none-of-the-above'].includes(req.body.some_income)) {
     pruneSessionData(req, ['rrif', 'reduced-income', 'gross-income'])
-    return res.redirect(res.locals.routePath('question-mortgage-payments'))
+    return res.redirect(res.locals.routePath('question-cerb'))
   }
 
   if (req.body.some_income === 'retired') {
