@@ -15,6 +15,6 @@ module.exports = (app, route) => {
         return res.redirect(res.locals.routePath('question-rrif'))
       }
 
-      return res.redirect(res.locals.routePath('question-mortgage-payments'))
+      return res.redirect(res.locals.routePath('question-cerb'))
     })
 }
