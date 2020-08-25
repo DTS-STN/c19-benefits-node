@@ -26,7 +26,7 @@ describe('Result Page Only tests', () => {
 
 function provinceLookup(key, locale){
   return {
-    'on': {'en': 'Ontario', 'fr': 'Ontario'},
+    'on': {'en': 'on', 'fr': 'on'},
   }[key][locale];
 }
 describe('Paths and Benefits', () => {
@@ -41,7 +41,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('EI Sickness CERB, Mortgage, Student Loans, CCB', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-all-income')
         cy.answerRB('#no_incomesick-or-quarantined')
         cy.answerRB('#cerbnot-receiving-cerb')
@@ -60,7 +60,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('CERB', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-all-income')
         cy.answerRB('#no_incomeself-employed-closed')
         cy.answerRB('#cerbnot-receiving-cerb')
@@ -76,7 +76,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('EI Regular Cerb', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-some-income')
         cy.answerRB('#some_incomehours-reduced')
         cy.answerRB('#reduced_income1000_or_less')
@@ -93,7 +93,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('RRIF', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-some-income')
         cy.answerRB('#some_incomeretired')
         cy.answerRB('#gross_income4999_or_less')
@@ -111,7 +111,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('OAS', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-some-income')
         cy.answerRB('#some_incomeretired')
         cy.answerRB('#gross_income4999_or_less')
@@ -129,7 +129,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('Rent Help, Student Financial Aid', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomestudent_2019_20')
         cy.answerRB('#cerbnot-receiving-cerb')
@@ -147,7 +147,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-alone', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#cerbnot-receiving-cerb')
@@ -163,7 +163,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-child', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#cerbnot-receiving-cerb')
@@ -179,7 +179,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-apply-individual', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#cerbnot-receiving-cerb')
@@ -195,7 +195,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-apply-child', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#cerbnot-receiving-cerb')
@@ -211,7 +211,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-oas', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#cerbnot-receiving-cerb')
