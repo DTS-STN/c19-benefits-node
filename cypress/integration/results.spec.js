@@ -14,12 +14,6 @@ describe('Result Page Only tests', () => {
         cy.get('[data-cy=missed-questions]')
         cy.reportA11y()
       })
-
-      it('should display GST Benefit no matter what', () => {
-        cy.visit(route('results', lang))
-        cy.get('#gst_credit')
-        cy.reportA11y()
-      })
     })
   })
 })
