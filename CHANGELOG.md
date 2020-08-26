@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-08-26
+
+### Removed
+* Canada Child Benefit question and result have been removed
+
 ## 2020-08-25
 
 ### Changed

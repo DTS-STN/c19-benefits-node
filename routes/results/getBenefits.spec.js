@@ -382,18 +382,6 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('rent_help')
   })
 
-  test('It checks the ccb addon', () => {
-    const options = ['yes', 'unsure']
-
-    options.forEach(ccb => {
-      const result = getBenefits({
-        ccb: ccb,
-      })
-
-      expect(result).toContain('ccb_payment')
-    })
-  })
-
   test('It checks the rrif addon', () => {
     const expected = ['rrif']
 
