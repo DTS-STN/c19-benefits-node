@@ -50,10 +50,6 @@ describe('Error Pages', () => {
         testError('question-mortgage-payments', lang)
       })
 
-      it('CCB', () => {
-        testError('question-ccb', lang)
-      })
-
       it('Student Debt', () => {
         testError('question-student-debt', lang)
       })
