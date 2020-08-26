@@ -98,7 +98,6 @@ describe('Found Bugs', () => {
       cy.answerRB("#lost_joblost-no-income")
       cy.answerRB("#unchanged_incomenone-of-the-above")
       cy.answerRB('#mortgage_paymentsno')
-      cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
