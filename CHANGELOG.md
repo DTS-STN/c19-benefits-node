@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-08-27
+
+### Changed
+* Updated content on CRB result cards
+
 ## 2020-08-26
 
 ### Removed
