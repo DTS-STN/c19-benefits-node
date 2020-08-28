@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-08-28
+
+### Added
+* French translations to the CERB questions and CRB related results
+
 ## 2020-08-27
 
 ### Changed
