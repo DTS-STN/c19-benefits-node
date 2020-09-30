@@ -138,6 +138,7 @@ const getBenefits = (data, featureFlags) => {
           'unpaid-leave-to-care',
           'parental-recently-cant-return',
           'ei-recently-claim-ended',
+          'student_2019_20',
         ],
       },
       'cerb',
@@ -154,6 +155,7 @@ const getBenefits = (data, featureFlags) => {
           'unpaid-leave-to-care',
           'parental-recently-cant-return',
           'ei-recently-claim-ended',
+          'student_2019_20',
         ],
       },
       'transition_to_ei',
@@ -181,28 +183,6 @@ const getBenefits = (data, featureFlags) => {
         reduced_income: '1000_or_less',
       },
       'transition_to_ei',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-all-income',
-        no_income: 'student_2019_20',
-      },
-      'cesb',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-no-income',
-        unchanged_income: ['student_2019_20', 'high_school_grad'],
-      },
-      'cesb',
     ),
   )
 
