@@ -6,24 +6,33 @@
   {{__("student_loan.header")}}
 {% endblock %}
 
+{% block preamble %}
+  Vous pourriez être admissible au <b>Programme d’aide au remboursement (PAR)</b> ou au <b>Programme d’aide au remboursement pour les emprunteurs ayant une invalidité permanente (PAR-IP)</b>
+{% endblock %}
+
 {% block featured_list_items %}
-  {{ benefitLi("<strong>Les paiements sont automatiquement suspendus</strong>") }}
-  {{ benefitLi("<strong>Du 30 mars 2020 jusqu’au 30 septembre 2020</strong>") }}
+  {{ benefitLi("<strong>Paiement mensuel réduit ou à un paiement mensuel nul</strong>") }}
+  {{ benefitLi("<strong>Montant réduit pour couvrir les dépenses liées à votre invalidité</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>Bon à savoir :</strong>
+  <strong>Vous pourriez être admissible au Programme d’aide au remboursement si :</strong>
   <ul>
-    <li>Vous n’avez pas à faire de demande afin de suspendre vos paiements.</li>
-    <li> Les paiements pré-autorisés sont suspendus.</li>
-    <li> Consultez vous à votre compte au <a href='https://www.csnpe-nslsc.canada.ca/fr/Accueil' target='_blank'>Centre de service national de prêts aux étudiants</a> pour plus de détails.</li>
+    <li>Vous résidez au Canada (ou faites un stage international ou êtes un réserviste en mission à l’étranger);</li>
+    <li>Vous avez obtenu votre diplôme ou quitté l’école depuis au moins six mois (et vous remboursez vos prêts);</li>
+    <li>Vos prêts sont à jour.</li>
+  </ul>
+  <strong>Vous pourriez être admissible au Programme d’aide au remboursement pour les emprunteurs ayant une invalidité permanente si :</strong>
+  <ul>
+    <li>Vous avez une invalidité permanente qui a été évaluée et reconnue par le Programme canadien de prêts aux étudiants;</li>
+    <li>Vous êtes admissible au Programme d’aide au remboursement.</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "student_loan",
-    "https://www.csnpe-nslsc.canada.ca/fr/Accueil",
+    "https://www.canada.ca/fr/services/prestations/education/aide-etudiants/bourses-prets/rembourser/aide-remboursement/par.html",
     "En savoir plus à propos de l’aide disponible pour votre dette d’étude"
   )}}
 {% endblock %}

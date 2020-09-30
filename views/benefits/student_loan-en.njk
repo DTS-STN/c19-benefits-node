@@ -6,24 +6,33 @@
   {{__("student_loan.header")}}
 {% endblock %}
 
+{% block preamble %}
+  You could be eligible for the <b>Repayment Assistance Plan (RAP)</b> or the <b>Repayment Assistance for Borrowers with a Permanent Disability (RAP-PD)</b>
+{% endblock %}
+
 {% block featured_list_items %}
-  {{ benefitLi("<strong>Payments automatically paused</strong>") }}
-  {{ benefitLi("<strong>From March 30, 2020 until September 30, 2020</strong>") }}
+  {{ benefitLi("<strong>Reduced monthly payment, or no monthly payment</strong>") }}
+  {{ benefitLi("<strong>Reduced payment amount to help with expenses related to your disability</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>Good to know:</strong>
+  <strong>You may qualify for repayment assistance if:</strong>
   <ul>
-    <li>You don’t need to apply to pause your payments.</li>
-    <li> Pre-authorized payments are stopped.</li>
-    <li> Log in to your <a href='https://www.csnpe-nslsc.canada.ca/en/home' target='_blank'>National Student Loans Service Centre</a> account to see how much you will save.</li>
+    <li>you reside in Canada (or are on an international internship or are a reservist deployed abroad)</li>
+    <li>at least six months have passed since you graduated or left school (your loans are in repayment)</li>
+    <li>you are up-to-date on your loan payments.</li>
+  </ul>
+  <strong>If you have a permanent disability, you may qualify for RAP-PD if:</strong>
+  <ul>
+    <li>your permanent disability has been assessed and recognized by the Canada Student Loans Program; and</li>
+    <li>You are eligible for the Repayment Assistance Plan.</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "student_loan",
-    "https://www.csnpe-nslsc.canada.ca/en/home",
+    "https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans/repay/assistance/rap.html",
     "Learn more about help with student loan payments"
   )}}
 {% endblock %}
