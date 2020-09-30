@@ -87,6 +87,21 @@ describe('Paths and Benefits', () => {
         cy.get('#cerb')
         cy.get('#transition_to_ei')
       })
+      
+      it('Students get CERB and EI', () => {
+        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerRB('#lost_joblost-all-income')
+        cy.answerRB('#no_incomestudent_2019_20')
+        cy.answerRB('#mortgage_paymentsno')
+        cy.answerRB('#student_debtno')
+        cy.answerRB('#plans_for_schoolno')
+        cy.answerRB('#oasno')
+        cy.answerRB('#dtcno')
+        cy.reportA11y()
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
+        cy.get('#cerb')
+        cy.get('#transition_to_ei')
+      })
 
       it('RRIF', () => {
         cy.answerInput('#province-select',provinceLookup('on',lang))
@@ -123,16 +138,15 @@ describe('Paths and Benefits', () => {
       it('Rent Help, Student Financial Aid', () => {
         cy.answerInput('#province-select',provinceLookup('on',lang))
         cy.answerRB('#lost_joblost-no-income')
-        cy.answerRB('#unchanged_incomestudent_2019_20')
+        cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#mortgage_paymentsyes-rent')
         cy.answerRB('#student_debtno')
         cy.answerRB('#plans_for_schoolyes')
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '3')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
         cy.get('#rent_help')
-        cy.get('#cesb')
         cy.get('#student_financial_aid')
       })
 

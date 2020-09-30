@@ -9,8 +9,6 @@ const Schema = {
           'wfh',
           'paid-leave',
           'retired',
-          'student_2019_20',
-          'high_school_grad',
           'none-of-the-above',
         ],
       ],
