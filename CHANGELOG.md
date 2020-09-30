@@ -3,7 +3,13 @@ All notable changes to this product will be documented in this file.
 ## 2020-09-30
 
 ### Changed
+* updated plans for school question
 * updated Student loan repayment options card
+* updated CERB results card text
+* updated EI results card text
+
+### Removed
+* removed the CESB results card
 
 ## 2020-09-29
 
