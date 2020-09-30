@@ -1,5 +1,10 @@
 # Changelog
 All notable changes to this product will be documented in this file.
+## 2020-09-30
+
+### Changed
+* updated Student loan repayment options card
+
 ## 2020-09-29
 
 ### Changed
