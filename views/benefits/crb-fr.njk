@@ -7,24 +7,31 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>Destinée aux travailleurs inadmissibles à l’assurance‑emploi qui ont vu leur revenu d’emploi ou de travail autonome diminuer en raison de la COVID-19.</strong>") }}
   {{ benefitLi("<strong>400 $ par semaine</strong>") }}
-  {{ benefitLi("<strong>Maximum de 26 semaines</strong> si vous respectez en tout temps les critères d’admissibilité et ne recevez pas de prestations d’assurance‑emploi.") }}
-  {{ benefitLi("<strong>Prestation offerte à compter d’octobre, rétroactive au 27 septembre 2020</strong>") }}
+  {{ benefitLi("<strong>Maximum de 26 semaines si vous respectez en tout temps les critères d’admissibilité et que vous n'avez droit à aucune prestation de l’assurance‑emploi") }}
+  {{ benefitLi("<strong>Prestation offerte à compter d’octobre, rétroactive au 27 septembre 2020</strong>") }}
 {% endblock %}
 
 {% block body %}
+  <strong>Vous pourriez être admissible à la PCRE si vous :</strong>
+  <ul>
+    <li>vez cessé de travailler pour des raisons liées à la pandémie de COVID-19 et n’êtes pas admissibles à l’assurance-emploi, ou, vous travaillez, mais avez vu votre revenu d’emploi ou de travail indépendant diminuer d’au moins 50 % en raison de la COVID-19;</li>
+    <li>êtes disponible pour travailler, êtes à la recherche d’un emploi et accepteriez un travail lorsqu’il est raisonnable de le faire;</li>
+    <li>avez gagné un revenu d’emploi ou un revenu de travail indépendant d’au moins 5 000 $ en 2019 ou en 2020, ou dans la période de douze mois précédant leur première demande de la PCRE;</li>
+    <li>n’avez pas quitté votre emploi volontairement, sauf s’il était raisonnable de le faire;</li>
+    <li>n’avez pas refusé une offre d’emploi raisonnable ou une demande de retour au travail ou n’avez pas refusé de reprendre le travail s’il s’agit d’un travail indépendant, lorsqu’il était raisonnable de le faire.</li>
+  </ul>
+
   <strong>Prochaines étapes</strong>
   <ul>
-    <li>Dans la demande, vous devrez déclarer que vous respectez les critères d’admissibilité; lisez attentivement tous les détails.</li>
-    <li>Les demandeurs devront rembourser une partie ou l’ensemble de la prestation si leur revenu annuel net est de plus de 38 000 $ (en excluant la PCRE).</li>
+    <li>Dans la demande, vous devrez déclarer que vous remplissez les critères d’admissibilité; lisez attentivement tous les détails</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
       "crb",
-      "https://www.canada.ca",
-      "En savoir plus"
+      "https://canada.ca/fr/agence-revenu/services/prestations/prestation-relance-economique.html",
+      "En savoir plus à propos de la PCRE"
   )}}
 {% endblock %}

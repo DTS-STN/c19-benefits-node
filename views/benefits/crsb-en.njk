@@ -7,24 +7,34 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>For workers who cannot work because they are sick or must self-isolate as a result of COVID-19</strong>") }}
   {{ benefitLi("<strong>$500 per week</strong>") }}
   {{ benefitLi("<strong>Up to 2 weeks at a time</strong> if you meet the eligibility criteria and are not and are not in receipt of any EI benefits or paid leave from your employer for the same week") }}
   {{ benefitLi("<strong>Benefit available in October retroactive to September 27, 2020</strong>") }}
 {% endblock %}
 
 {% block body %}
+  <strong>You may qualify for the CRSB assistance if you:</strong>
+  <ul>
+    <li>are employed or self-employed at the time of the application</li>
+    <li>had employment and/or self-employment income of at least $5,000 in 2019 or in 2020, or in the 12-month period prior to your first application for the CRSB</li>
+    <li>have missed a minimum of 50% of your scheduled work in the week for which you claim the benefit, because:</li>
+    <ul>
+      <li>you are sick with or may have contracted COVID-19</li>
+      <li>you have isolated yourself on the advice of your employer, a medical practitioner, a nurse practitioner, a person in authority, a government or a public health authority for reasons related to COVID-19</li>
+      <li>you have underlying conditions that in the opinion of a medical practitioner, nurse practitioner, person in authority, government or public health authority would make you more susceptible to COVID-19</li>
+    </ul> 
+  </ul>
+
   <strong>Next steps:</strong>
   <ul>
-    <li>The application will ask you to declare that you meet the eligibility criteria, so read the details carefully.</li>
-    <li>You’ll need to pay income tax on these payments in the future.</li>
+    <li>The application will ask you to declare that you meet the eligibility criteria, so read the details carefully</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
       "crsb",
-      "https://www.canada.ca",
-      "Find more information"
+      "https://canada.ca/en/revenue-agency/services/benefits/recovery-sickness-benefit.html",
+      "Find more information about the CRSB"
   )}}
 {% endblock %}
