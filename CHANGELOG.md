@@ -1,5 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
+
+## 2020-10-02
+
+### Changed
+* updated CRB, CSRB, CRCB results card text
+
 ## 2020-09-30
 
 ### Changed
@@ -22,16 +28,6 @@ All notable changes to this product will be documented in this file.
 * Added CERB information
 * Added new Transition to EI result
 * Removed CCB
-
-## 2020-08-28
-
-### Added
-* French translations to the CERB questions and CRB related results
-
-## 2020-08-27
-
-### Changed
-* Updated content on CRB result cards
 
 ## 2020-08-26
 
