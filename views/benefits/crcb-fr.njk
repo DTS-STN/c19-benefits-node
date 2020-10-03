@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crcb' %}
+
+{% block header %}
+  {{__("crcb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>Destinée aux travailleurs incapables de travailler pour fournir des soins ou du soutien à un enfant, à un proche handicapé ou à une personne à charge parce que leur école, service de garde ou centre de jour est fermé en raison de la COVID-19.</strong>") }}
+  {{ benefitLi("<strong>500 $ par semaine</strong>") }}
+  {{ benefitLi("<strong>Maximum de 26 semaines par ménage</strong> si vous respectez les critères d’admissibilité et ne recevez aucune prestation d’assurance‑emploi durant la semaine où vous demandez la PCREPA.") }}
+  {{ benefitLi("<strong>Prestation offerte à compter d’octobre, rétroactive au 27 septembre 2020</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Prochaines étapes</strong>
+  <ul>
+    <li>Les travailleurs qui préfèrent garder leurs enfants ou personnes à charge à la maison après la réouverture des installations ne sont pas admissibles à la prestation.</li>
+    <li>Dans la demande, vous devrez déclarer que vous respectez les critères d’admissibilité; lisez attentivement tous les détails.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crcb",
+      "https://www.canada.ca",
+      "En savoir plus"
+  )}}
+{% endblock %}

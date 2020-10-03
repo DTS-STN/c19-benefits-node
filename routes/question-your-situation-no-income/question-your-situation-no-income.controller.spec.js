@@ -18,11 +18,12 @@ describe('Test redirects for no-income ', () => {
 
   const redirects = [
     {
-      dest: 'question-mortgage-payments',
+      dest: 'question-cerb',
       values: [
         'lost-job',
         'employer-closed',
         'self-employed-closed',
+        'child-or-dependent-school-closed',
         'unpaid-leave-to-care',
         'sick-or-quarantined',
         'parental-recently-cant-return',

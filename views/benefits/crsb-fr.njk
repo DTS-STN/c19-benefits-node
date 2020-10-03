@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crsb' %}
+
+{% block header %}
+  {{__("crsb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>Destinée aux travailleurs qui ne peuvent pas travailler parce qu’ils sont malades ou doivent rester en isolement volontaire en raison de la COVID-19.</strong>") }}
+  {{ benefitLi("<strong>500 $ par semaine</strong>") }}
+  {{ benefitLi("<strong>Maximum de deux semaines à la fois</strong> si vous respectez les critères d’admissibilité et ne recevez aucune prestation d’assurance‑emploi ou de congés payés de la part de votre employeur pour la même semaine.") }}
+  {{ benefitLi("<strong>Prestation offerte à compter d’octobre, rétroactive au 27 septembre 2020</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Prochaines étapes</strong>
+  <ul>
+    <li>Dans la demande, vous devrez déclarer que vous respectez les critères d’admissibilité; lisez attentivement tous les détails.</li>
+    <li>Cette prestation est imposable.</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crsb",
+      "https://www.canada.ca",
+      "En savoir plus"
+  )}}
+{% endblock %}

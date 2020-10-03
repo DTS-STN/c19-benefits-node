@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crb' %}
+
+{% block header %}
+  {{__("crb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>Destinée aux travailleurs inadmissibles à l’assurance‑emploi qui ont vu leur revenu d’emploi ou de travail autonome diminuer en raison de la COVID-19.</strong>") }}
+  {{ benefitLi("<strong>400 $ par semaine</strong>") }}
+  {{ benefitLi("<strong>Maximum de 26 semaines</strong> si vous respectez en tout temps les critères d’admissibilité et ne recevez pas de prestations d’assurance‑emploi.") }}
+  {{ benefitLi("<strong>Prestation offerte à compter d’octobre, rétroactive au 27 septembre 2020</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>Prochaines étapes</strong>
+  <ul>
+    <li>Dans la demande, vous devrez déclarer que vous respectez les critères d’admissibilité; lisez attentivement tous les détails.</li>
+    <li>Les demandeurs devront rembourser une partie ou l’ensemble de la prestation si leur revenu annuel net est de plus de 38 000 $ (en excluant la PCRE).</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crb",
+      "https://www.canada.ca",
+      "En savoir plus"
+  )}}
+{% endblock %}
