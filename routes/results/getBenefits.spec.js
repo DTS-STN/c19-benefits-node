@@ -265,6 +265,7 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toContain("cerb")
+    expect(result).toContain("transition_to_ei")
   })
 
   test('It checks ei regular + cerb path + employer closed', () => {

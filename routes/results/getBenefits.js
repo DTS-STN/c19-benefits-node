@@ -43,7 +43,7 @@ const getBenefits = (data, featureFlags) => {
       data,
       {
         lost_job: 'lost-all-income',
-        no_income: ['lost-job', 'employer-closed'],
+        no_income: ['lost-job', 'employer-closed', "student_2019_20"],
         cerb: "not-receiving-cerb",
       },
       'cerb',
@@ -55,7 +55,73 @@ const getBenefits = (data, featureFlags) => {
       data,
       {
         lost_job: 'lost-all-income',
-        no_income: ['lost-job', 'employer-closed'],
+        no_income: ['lost-job', 'employer-closed', "student_2019_20"],
+        cerb: "not-receiving-cerb",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: ['lost-job', 'employer-closed', "student_2019_20"],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: ['lost-job', 'employer-closed', "student_2019_20"],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        reduced_income: '1000_or_less',
+        cerb: "not-receiving-cerb",
+      },
+      'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        reduced_income: '1000_or_less',
+        cerb: "not-receiving-cerb",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        reduced_income: '1000_or_less',
         cerb: "receiving-cerb",
         cerb_exhausted: "cerb-exhausted-no",
       },
@@ -70,35 +136,10 @@ const getBenefits = (data, featureFlags) => {
         lost_job: 'lost-some-income',
         some_income: ['hours-reduced', 'employed-lost-a-job'],
         reduced_income: '1000_or_less',
-        cerb: "not-receiving-cerb",
-      },
-      'cerb',
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-all-income',
-        no_income: ['lost-job', 'employer-closed'],
-      },
-      'transition_to_ei',
-    ),
-  )
-
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        some_income: ['hours-reduced', 'employed-lost-a-job'],
-        reduced_income: '1000_or_less',
         cerb: "receiving-cerb",
         cerb_exhausted: "cerb-exhausted-no",
       },
-      'cerb',
+      'transition_to_ei',
     ),
   )
 
@@ -118,13 +159,14 @@ const getBenefits = (data, featureFlags) => {
     match(
       data,
       {
-        lost_job: 'lost-some-income',
-        some_income: ['hours-reduced', 'employed-lost-a-job'],
-        reduced_income: '1000_or_less',
+        lost_job: 'lost-all-income',
+        no_income: 'sick-or-quarantined',
+        cerb:"not-receiving-cerb",
       },
       'transition_to_ei',
     ),
   )
+
 
   results.push(
     match(
@@ -138,6 +180,20 @@ const getBenefits = (data, featureFlags) => {
       'cerb',
     ),
   )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: 'sick-or-quarantined',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'transition_to_ei',
+    ),
+  )
+
 
   results.push(
     match(
@@ -155,8 +211,9 @@ const getBenefits = (data, featureFlags) => {
     match(
       data,
       {
-        lost_job: 'lost-all-income',
-        no_income: 'sick-or-quarantined',
+        lost_job: 'lost-some-income',
+        some_income: 'quarantine',
+        cerb:"not-receiving-cerb",
       },
       'transition_to_ei',
     ),
@@ -172,6 +229,19 @@ const getBenefits = (data, featureFlags) => {
         cerb_exhausted: "cerb-exhausted-no",
       },
       'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'quarantine',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'transition_to_ei',
     ),
   )
 
@@ -196,8 +266,14 @@ const getBenefits = (data, featureFlags) => {
     match(
       data,
       {
-        lost_job: 'lost-some-income',
-        some_income: 'quarantine',
+        lost_job: 'lost-all-income',
+        no_income: [
+          'self-employed-closed',
+          'unpaid-leave-to-care',
+          'parental-recently-cant-return',
+          'ei-recently-claim-ended',
+        ],
+        cerb:"not-receiving-cerb",
       },
       'transition_to_ei',
     ),
@@ -221,6 +297,7 @@ const getBenefits = (data, featureFlags) => {
     ),
   )
 
+
   results.push(
     match(
       data,
@@ -232,6 +309,8 @@ const getBenefits = (data, featureFlags) => {
           'parental-recently-cant-return',
           'ei-recently-claim-ended',
         ],
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
       },
       'transition_to_ei',
     ),
@@ -257,10 +336,37 @@ const getBenefits = (data, featureFlags) => {
         lost_job: 'lost-some-income',
         some_income: 'selfemployed-some-income',
         reduced_income: '1000_or_less',
+        cerb:"not-receiving-cerb",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'selfemployed-some-income',
+        reduced_income: '1000_or_less',
         cerb:"receiving-cerb",
         cerb_exhausted: "cerb-exhausted-no",
       },
       'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'selfemployed-some-income',
+        reduced_income: '1000_or_less',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'transition_to_ei',
     ),
   )
 
@@ -428,19 +534,6 @@ const getBenefits = (data, featureFlags) => {
         cerb_exhausted: "cerb-exhausted-almost",
       },
       "crsb",
-    ),
-  )
-
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: 'lost-some-income',
-        some_income: 'selfemployed-some-income',
-        reduced_income: '1000_or_less',
-      },
-      'transition_to_ei',
     ),
   )
 
