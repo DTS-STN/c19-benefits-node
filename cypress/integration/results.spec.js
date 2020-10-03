@@ -14,19 +14,13 @@ describe('Result Page Only tests', () => {
         cy.get('[data-cy=missed-questions]')
         cy.reportA11y()
       })
-
-      it('should display GST Benefit no matter what', () => {
-        cy.visit(route('results', lang))
-        cy.get('#gst_credit')
-        cy.reportA11y()
-      })
     })
   })
 })
 
 function provinceLookup(key, locale){
   return {
-    'on': {'en': 'Ontario', 'fr': 'Ontario'},
+    'on': {'en': 'on', 'fr': 'on'},
   }[key][locale];
 }
 describe('Paths and Benefits', () => {
@@ -40,10 +34,12 @@ describe('Paths and Benefits', () => {
         cy.get('[data-cy=start]').click()
       })
 
+
       it('EI Sickness CERB, Mortgage, Student Loans', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-all-income')
         cy.answerRB('#no_incomesick-or-quarantined')
+        cy.answerRB('#cerbnot-receiving-cerb')
         cy.answerRB('#mortgage_paymentsyes-mortgage')
         cy.answerRB('#student_debtyes')
         cy.answerRB('#plans_for_schoolno')
@@ -57,10 +53,11 @@ describe('Paths and Benefits', () => {
         cy.get('#student_loan')
       })
 
-      it('CERB', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+      it('CERB and Transition to EI', () => {
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-all-income')
         cy.answerRB('#no_incomeself-employed-closed')
+        cy.answerRB('#cerbnot-receiving-cerb')
         cy.answerRB('#mortgage_paymentsno')
         cy.answerRB('#student_debtno')
         cy.answerRB('#plans_for_schoolno')
@@ -72,11 +69,12 @@ describe('Paths and Benefits', () => {
         cy.get('#transition_to_ei')
       })
 
-      it('EI Regular Cerb', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
-        cy.answerRB('#lost_joblost-some-income')
-        cy.answerRB('#some_incomehours-reduced')
-        cy.answerRB('#reduced_income1000_or_less')
+      it("CERB with cerb exhausted no", () => {
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
+        cy.answerRB('#lost_joblost-all-income')
+        cy.answerRB('#no_incomeself-employed-closed')
+        cy.answerRB('#cerbreceiving-cerb')
+        cy.answerRB('#cerb_exhaustedcerb-exhausted-no')
         cy.answerRB('#mortgage_paymentsno')
         cy.answerRB('#student_debtno')
         cy.answerRB('#plans_for_schoolno')
@@ -87,11 +85,74 @@ describe('Paths and Benefits', () => {
         cy.get('#cerb')
         cy.get('#transition_to_ei')
       })
-      
+
+      it("CRB", () => {
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
+        cy.answerRB('#lost_joblost-all-income')
+        cy.answerRB('#no_incomeself-employed-closed')
+        cy.answerRB('#cerbreceiving-cerb')
+        cy.answerRB('#cerb_exhaustedcerb-exhausted-almost')
+        cy.answerRB('#mortgage_paymentsno')
+        cy.answerRB('#student_debtno')
+        cy.answerRB('#plans_for_schoolno')
+        cy.answerRB('#oasno')
+        cy.answerRB('#dtcno')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('#crb')
+      })
+
+      it("CRCB", () => {
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
+        cy.answerRB('#lost_joblost-all-income')
+        cy.answerRB('#no_incomeunpaid-leave-to-care')
+        cy.answerRB('#cerbreceiving-cerb')
+        cy.answerRB('#cerb_exhaustedcerb-exhausted-almost')
+        cy.answerRB('#mortgage_paymentsno')
+        cy.answerRB('#student_debtno')
+        cy.answerRB('#plans_for_schoolno')
+        cy.answerRB('#oasno')
+        cy.answerRB('#dtcno')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('#crcb')
+      })
+
+      it("CRSB", () => {
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
+        cy.answerRB('#lost_joblost-all-income')
+        cy.answerRB('#no_incomesick-or-quarantined')
+        cy.answerRB('#cerbreceiving-cerb')
+        cy.answerRB('#cerb_exhaustedcerb-exhausted-almost')
+        cy.answerRB('#mortgage_paymentsno')
+        cy.answerRB('#student_debtno')
+        cy.answerRB('#plans_for_schoolno')
+        cy.answerRB('#oasno')
+        cy.answerRB('#dtcno')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('#crsb')
+      })
+
+      it('EI Regular Cerb', () => {
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
+        cy.answerRB('#lost_joblost-some-income')
+        cy.answerRB('#some_incomehours-reduced')
+        cy.answerRB('#reduced_income1000_or_less')
+        cy.answerRB('#cerbnot-receiving-cerb')
+        cy.answerRB('#mortgage_paymentsno')
+        cy.answerRB('#student_debtno')
+        cy.answerRB('#plans_for_schoolno')
+        cy.answerRB('#oasno')
+        cy.answerRB('#dtcno')
+        cy.reportA11y()
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
+        cy.get('#cerb')
+        cy.get('#transition_to_ei')
+      })
+
       it('Students get CERB and EI', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-all-income')
         cy.answerRB('#no_incomestudent_2019_20')
+        cy.answerRB('#cerbnot-receiving-cerb')
         cy.answerRB('#mortgage_paymentsno')
         cy.answerRB('#student_debtno')
         cy.answerRB('#plans_for_schoolno')
@@ -104,11 +165,12 @@ describe('Paths and Benefits', () => {
       })
 
       it('RRIF', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-some-income')
         cy.answerRB('#some_incomeretired')
         cy.answerRB('#gross_income4999_or_less')
         cy.answerRB('#rrifyes')
+        cy.answerRB('#cerbnot-receiving-cerb')
         cy.answerRB('#mortgage_paymentsno')
         cy.answerRB('#student_debtno')
         cy.answerRB('#plans_for_schoolno')
@@ -120,11 +182,12 @@ describe('Paths and Benefits', () => {
       })
 
       it('OAS', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-some-income')
         cy.answerRB('#some_incomeretired')
         cy.answerRB('#gross_income4999_or_less')
         cy.answerRB('#rrifno')
+        cy.answerRB('#cerbnot-receiving-cerb')
         cy.answerRB('#mortgage_paymentsno')
         cy.answerRB('#student_debtno')
         cy.answerRB('#plans_for_schoolno')
@@ -136,7 +199,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('Rent Help, Student Financial Aid', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#mortgage_paymentsyes-rent')
@@ -151,7 +214,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-alone', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#mortgage_paymentsno')
@@ -165,7 +228,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-child', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#mortgage_paymentsno')
@@ -179,7 +242,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-apply-individual', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#mortgage_paymentsno')
@@ -193,7 +256,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-apply-child', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#mortgage_paymentsno')
@@ -207,7 +270,7 @@ describe('Paths and Benefits', () => {
       })
 
       it('dtc-oas', () => {
-        cy.answerInput('#province-select',provinceLookup('on',lang))
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-no-income')
         cy.answerRB('#unchanged_incomenone-of-the-above')
         cy.answerRB('#mortgage_paymentsno')

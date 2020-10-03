@@ -1,0 +1,41 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crcb' %}
+
+{% block header %}
+  {{__("crcb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>$500 per week</strong>") }}
+  {{ benefitLi("<strong>Up to 26 weeks per household</strong> if you meet the eligibility criteria and are not receiving any EI benefits for the same week for which you are claiming the Canada Recovery Caregiving Benefit") }}
+  {{ benefitLi("<strong>Benefit available in October retroactive to September 27, 2020</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>You may qualify for the CRCB assistance if you:</strong>
+  <ul>
+    <li>are employed or self-employed at the time of the application</li>
+    <li>had employment and/or self-employment income of at least $5,000 in 2019 or in 2020, or in the 12-month period prior to your first application for the CRCB</li>
+    <li>have missed a minimum of 50% of your scheduled work in the week for which you claim the benefit, because you are unable to work in order to provide care for a child under the age of 12 or a family member, because:</li>
+     <ul>
+        <li>their school or usual place of care is unavailable, closed or open only certain times or for certain individuals</li>
+        <li>the person who usually cares for your child or family member is not available for reasons related to COVID-19</li>
+        <li>they are sick and/or have been directed to quarantine for reasons related to COVID-19</li>
+        <li>they are at high risk of serious health complications if they contracted COVID-19</li>
+      </ul> 
+  </ul>
+
+  <strong>Next steps:</strong>
+  <ul>
+    <li>The application will ask you to declare that you meet the eligibility criteria, so read the details carefully</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crcb",
+      "https://canada.ca/en/revenue-agency/services/benefits/recovery-caregiving-benefit.html",
+      "Find more information about the CRCB"
+  )}}
+{% endblock %}

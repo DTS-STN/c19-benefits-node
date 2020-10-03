@@ -43,7 +43,8 @@ const getBenefits = (data, featureFlags) => {
       data,
       {
         lost_job: 'lost-all-income',
-        no_income: ['lost-job', 'employer-closed'],
+        no_income: ['lost-job', 'employer-closed', "student_2019_20"],
+        cerb: "not-receiving-cerb",
       },
       'cerb',
     ),
@@ -54,7 +55,34 @@ const getBenefits = (data, featureFlags) => {
       data,
       {
         lost_job: 'lost-all-income',
-        no_income: ['lost-job', 'employer-closed'],
+        no_income: ['lost-job', 'employer-closed', "student_2019_20"],
+        cerb: "not-receiving-cerb",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: ['lost-job', 'employer-closed', "student_2019_20"],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: ['lost-job', 'employer-closed', "student_2019_20"],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
       },
       'transition_to_ei',
     ),
@@ -67,6 +95,7 @@ const getBenefits = (data, featureFlags) => {
         lost_job: 'lost-some-income',
         some_income: ['hours-reduced', 'employed-lost-a-job'],
         reduced_income: '1000_or_less',
+        cerb: "not-receiving-cerb",
       },
       'cerb',
     ),
@@ -79,6 +108,36 @@ const getBenefits = (data, featureFlags) => {
         lost_job: 'lost-some-income',
         some_income: ['hours-reduced', 'employed-lost-a-job'],
         reduced_income: '1000_or_less',
+        cerb: "not-receiving-cerb",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        reduced_income: '1000_or_less',
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: ['hours-reduced', 'employed-lost-a-job'],
+        reduced_income: '1000_or_less',
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
       },
       'transition_to_ei',
     ),
@@ -90,6 +149,7 @@ const getBenefits = (data, featureFlags) => {
       {
         lost_job: 'lost-all-income',
         no_income: 'sick-or-quarantined',
+        cerb:"not-receiving-cerb",
       },
       'cerb',
     ),
@@ -101,8 +161,23 @@ const getBenefits = (data, featureFlags) => {
       {
         lost_job: 'lost-all-income',
         no_income: 'sick-or-quarantined',
+        cerb:"not-receiving-cerb",
       },
       'transition_to_ei',
+    ),
+  )
+
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: 'sick-or-quarantined',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'cerb',
     ),
   )
 
@@ -110,8 +185,23 @@ const getBenefits = (data, featureFlags) => {
     match(
       data,
       {
+        lost_job: 'lost-all-income',
+        no_income: 'sick-or-quarantined',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+
+  results.push(
+    match(
+      data,
+      {
         lost_job: 'lost-some-income',
         some_income: 'quarantine',
+        cerb:"not-receiving-cerb",
       },
       'cerb',
     ),
@@ -123,6 +213,33 @@ const getBenefits = (data, featureFlags) => {
       {
         lost_job: 'lost-some-income',
         some_income: 'quarantine',
+        cerb:"not-receiving-cerb",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'quarantine',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'quarantine',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
       },
       'transition_to_ei',
     ),
@@ -138,8 +255,8 @@ const getBenefits = (data, featureFlags) => {
           'unpaid-leave-to-care',
           'parental-recently-cant-return',
           'ei-recently-claim-ended',
-          'student_2019_20',
         ],
+        cerb:"not-receiving-cerb",
       },
       'cerb',
     ),
@@ -155,8 +272,45 @@ const getBenefits = (data, featureFlags) => {
           'unpaid-leave-to-care',
           'parental-recently-cant-return',
           'ei-recently-claim-ended',
-          'student_2019_20',
         ],
+        cerb:"not-receiving-cerb",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: [
+          'self-employed-closed',
+          'unpaid-leave-to-care',
+          'parental-recently-cant-return',
+          'ei-recently-claim-ended',
+        ],
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'cerb',
+    ),
+  )
+
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-all-income',
+        no_income: [
+          'self-employed-closed',
+          'unpaid-leave-to-care',
+          'parental-recently-cant-return',
+          'ei-recently-claim-ended',
+        ],
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
       },
       'transition_to_ei',
     ),
@@ -169,6 +323,7 @@ const getBenefits = (data, featureFlags) => {
         lost_job: 'lost-some-income',
         some_income: 'selfemployed-some-income',
         reduced_income: '1000_or_less',
+        cerb:"not-receiving-cerb",
       },
       'cerb',
     ),
@@ -181,8 +336,204 @@ const getBenefits = (data, featureFlags) => {
         lost_job: 'lost-some-income',
         some_income: 'selfemployed-some-income',
         reduced_income: '1000_or_less',
+        cerb:"not-receiving-cerb",
       },
       'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'selfemployed-some-income',
+        reduced_income: '1000_or_less',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'cerb',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: 'lost-some-income',
+        some_income: 'selfemployed-some-income',
+        reduced_income: '1000_or_less',
+        cerb:"receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-no",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  // CRB- CERB EXHAUSTED
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-all-income",
+        no_income: [
+          "lost-job",
+          "employer-closed",
+          "self-employed-closed",
+          "sick-or-quarantined",
+          "student_2019_20",
+          "ei-recently-claim-ended",
+        ],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-yes",
+      },
+      "crb",
+    ),
+  )
+
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-some-income",
+        some_income: [
+          "hours-reduced",
+          "employed-lost-a-job",
+          "selfemployed-some-income",
+          "retired",
+        ],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-yes",
+      },
+      "crb",
+    ),
+  )
+
+  // CRCB CERB-EXHAUSTED
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-all-income",
+        no_income: [
+          'child-or-dependent-school-closed',
+          'unpaid-leave-to-care',
+        ],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-yes",
+      },
+      "crcb",
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-some-income",
+        some_income: 'child-or-dependent-school-closed',
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-yes",
+      },
+      "crcb",
+    ),
+  )
+
+  // CRB - CERB ALMOST EXHAUSTED
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-all-income",
+        no_income: [
+          "lost-job",
+          "employer-closed",
+          "self-employed-closed",
+          "parental-recently-cant-return",
+          "student_2019_20",
+          "ei-recently-claim-ended",
+        ],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-almost",
+      },
+      "crb",
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-some-income",
+        some_income: [
+          "hours-reduced",
+          "employed-lost-a-job",
+          "selfemployed-some-income",
+          "retired",
+        ],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-almost",
+      },
+      "crb",
+    ),
+  )
+
+
+  // CRCB - CERB ALMOST EXHAUSTED
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-all-income",
+        no_income: [
+          'child-or-dependent-school-closed',
+          'unpaid-leave-to-care',
+        ],
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-almost",
+      },
+      "crcb",
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-some-income",
+        some_income: 'child-or-dependent-school-closed',
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-almost",
+      },
+      "crcb",
+    ),
+  )
+
+  // CSRB
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-all-income",
+        no_income: 'sick-or-quarantined',
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-almost",
+      },
+      "crsb",
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
+        lost_job: "lost-some-income",
+        some_income: 'quarantine',
+        cerb: "receiving-cerb",
+        cerb_exhausted: "cerb-exhausted-almost",
+      },
+      "crsb",
     ),
   )
 

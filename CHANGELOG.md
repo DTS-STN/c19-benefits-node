@@ -1,5 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
+
+## 2020-10-02
+
+### Changed
+* updated CRB, CSRB, CRCB results card text
+
 ## 2020-09-30
 
 ### Changed
@@ -22,6 +28,28 @@ All notable changes to this product will be documented in this file.
 * Added CERB information
 * Added new Transition to EI result
 * Removed CCB
+
+## 2020-08-26
+
+### Removed
+* Canada Child Benefit question and result have been removed
+
+## 2020-08-25
+
+### Changed
+* Removed auto-complete from province dropdown
+* Added “Your child or dependent’s school, daycare or care facility is closed due to COVID-19.” option to Your Situation - No Income and Your Situation - Some Income questions. 
+* remove gst benefit card in other help section
+
+### Added
+* Added the CERB and CERB exhausted questions
+
+## 2020-08-21
+
+### Added
+* Added Canada Recovery Benefit
+* Added Canada Recovery Sickness Benefit
+* Added Canada Recovery Caregiving Benefit
 
 ## 2020-08-21
 
