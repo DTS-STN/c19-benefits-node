@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-10-07
+
+### Changed
+* Updated EI result card text
+* Updated CERB question text
+* EI result card shows when CERB is almost exhausted now
+
 ## 2020-10-02
 
 ### Changed
