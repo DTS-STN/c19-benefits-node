@@ -97,8 +97,9 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#plans_for_schoolno')
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
         cy.get('#crb')
+        cy.get('#transition_to_ei')
       })
 
       it("CRCB", () => {
@@ -112,8 +113,9 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#plans_for_schoolno')
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
         cy.get('#crcb')
+        cy.get('#transition_to_ei')
       })
 
       it("CRSB", () => {
@@ -127,8 +129,9 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#plans_for_schoolno')
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
         cy.get('#crsb')
+        cy.get('#transition_to_ei')
       })
 
       it('EI Regular Cerb', () => {

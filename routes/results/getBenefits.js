@@ -92,6 +92,16 @@ const getBenefits = (data, featureFlags) => {
     match(
       data,
       {
+        cerb_exhausted: "cerb-exhausted-almost",
+      },
+      'transition_to_ei',
+    ),
+  )
+
+  results.push(
+    match(
+      data,
+      {
         lost_job: 'lost-some-income',
         some_income: ['hours-reduced', 'employed-lost-a-job'],
         reduced_income: '1000_or_less',
