@@ -5,6 +5,16 @@ All notable changes to this product will be documented in this file.
 
 ### Changed
 * Updated EI result card text
+* Updated RRIF result card text
+* Updated OAS question
+
+### Removed
+* OAS results card
+
+## 2020-10-07
+
+### Changed
+* Updated EI result card text
 * Updated CERB question text
 * EI result card shows when CERB is almost exhausted now
 * Changed the order in which eligilble benefits get added to the list, making CRB related results appear first
