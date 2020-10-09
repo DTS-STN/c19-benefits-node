@@ -569,7 +569,6 @@ const getBenefits = (data, featureFlags) => {
   results.push(match(data, { mortgage_payments: 'yes-rent' }, 'rent_help'))
   results.push(match(data, { student_debt: 'yes' }, 'student_loan'))
 
-  results.push(match(data, { oas: ['oas', 'allowance', 'survivor'] }, 'oas'))
 
   if (featureFlags.enableDtc){
 

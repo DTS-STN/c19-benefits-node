@@ -15,7 +15,7 @@ module.exports = (app, route) => {
         return res.redirect(res.locals.routePath('question-cerb-exhausted'))
       }
 
-      pruneSessionData(req, ['cerb-exhausted'])
+      pruneSessionData(req, ['cerb_exhausted'])
       return res.redirect(res.locals.routePath('question-mortgage-payments'))
     })
 }

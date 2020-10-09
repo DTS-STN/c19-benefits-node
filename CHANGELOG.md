@@ -1,6 +1,19 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-10-08
+
+### Fixed
+* Fixed a bug that made the EI result card appear twice under some conditions
+
+### Changed
+* Updated EI workshare result card text
+* Updated the Transition to EI result card text
+* Updated RRIF result card text
+
+### Removed
+* OAS result card
+
 ## 2020-10-07
 
 ### Changed

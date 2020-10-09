@@ -184,23 +184,6 @@ describe('Paths and Benefits', () => {
         cy.get('#rrif')
       })
 
-      it('OAS', () => {
-        cy.answerSelect('#province-select', provinceLookup('on', lang))
-        cy.answerRB('#lost_joblost-some-income')
-        cy.answerRB('#some_incomeretired')
-        cy.answerRB('#gross_income4999_or_less')
-        cy.answerRB('#rrifno')
-        cy.answerRB('#cerbnot-receiving-cerb')
-        cy.answerRB('#mortgage_paymentsno')
-        cy.answerRB('#student_debtno')
-        cy.answerRB('#plans_for_schoolno')
-        cy.answerRB('#oasoas')
-        cy.answerRB('#dtcno')
-        cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
-        cy.get('#oas')
-      })
-
       it('Rent Help, Student Financial Aid', () => {
         cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-no-income')
@@ -282,8 +265,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasoas')
         cy.answerRB('#dtcyourself')
         cy.answerRB('#dtc_individualyes')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
-        cy.get("#oas")
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
         cy.get('#dtc_oas')
       })
     })

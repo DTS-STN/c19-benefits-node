@@ -408,18 +408,6 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('student_loan')
   })
 
-  test('It checks the oas addon', () => {
-    const options = ['oas', 'allowance', 'survivor']
-
-    options.forEach(oas => {
-      const result = getBenefits({
-        oas: oas,
-      })
-
-      expect(result).toContain('oas')
-    })
-  })
-
   test('It checks for student financial aid', () => {
     const result = getBenefits({
       plans_for_school: 'yes',
