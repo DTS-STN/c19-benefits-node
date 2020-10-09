@@ -7,9 +7,9 @@ All notable changes to this product will be documented in this file.
 * Fixed a bug that made the EI result card appear twice under some conditions
 
 ### Changed
-* Updated EI result card text
+* Updated EI workshare result card text
+* Updated the Transition to EI result card text
 * Updated RRIF result card text
-* Updated OAS question
 
 ### Removed
 * OAS result card
