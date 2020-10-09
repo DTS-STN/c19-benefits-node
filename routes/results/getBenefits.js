@@ -573,6 +573,7 @@ const getBenefits = (data, featureFlags) => {
   if (featureFlags.enableDtc){
 
     // DTC Benefits
+    results.push(match(data, { oas: ['oas', 'allowance', 'survivor'], dtc: 'yourself', dtc_individual: 'yes' }, 'dtc_oas'))
     results.push(match(data, { dtc: 'yourself', dtc_individual: 'no' }, 'dtc_apply'))
     results.push(match(data, { oas: 'no', dtc: 'yourself', dtc_individual: 'yes' }, 'dtc_individual'))
 
