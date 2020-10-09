@@ -1,7 +1,10 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
-## 2020-10-07
+## 2020-10-08
+
+### Fixed
+* Fixed a bug that made the EI result card appear twice under some conditions
 
 ### Changed
 * Updated EI result card text
