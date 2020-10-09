@@ -12,7 +12,7 @@ All notable changes to this product will be documented in this file.
 * Updated OAS question
 
 ### Removed
-* OAS results card
+* OAS result card
 
 ## 2020-10-07
 
