@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-10-28
+
+### Changed
+* Updated CRB, CRCB, and CRSB result card text
+* Updated all variations of DTC result card text
+
 ## 2020-10-08
 
 ### Fixed
