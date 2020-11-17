@@ -27,8 +27,8 @@
   "cerb.1": "Yes.",
   "cerb.2": "No.",
   "cerb_exhausted.1": "Yes, I have exhausted the 28 weeks of payments.",
-  "cerb_exhausted.2": "My 28 weeks of payments are almost up.",
-  "cerb_exhausted.3": "No, I have not exhausted my 28 weeks of payments.",
+  "cerb_exhausted.2": "Yes, but I have not exhausted my 28 weeks of payments.",
+  "cerb_exhausted.3": "No.",
   "cesb.header": "Help for students through the Canada Emergency Student Benefit (CESB)",
   "cssg.header": "Money for school if you volunteer for national service during the pandemic",
   "date_modified": "Date modified:",
@@ -80,8 +80,7 @@
   "footer.privacy.desc": "Privacy policy",
   "footer.terms": "https://canada.ca/en/transparency/terms.html",
   "footer.terms.desc": "Terms and conditions",
-  "form.cerb": "Did you receive the CERB?",
-  "form.cerb_exhausted": "Have you exhausted the 28 weeks of payments?",
+  "form.cerb_exhausted": "Did you receive the CERB?",
   "form.dtc": "Are you or your child a person with disabilities?",
   "form.dtc-individual": "Do you hold a valid Disability Tax Credit certificate or are you a beneficiary of one of the following as of July 1, 2020:",
   "form.dtc-child": "Does your child have a valid Disability Tax Credit certificate?",
@@ -223,5 +222,6 @@
   "your_situation.unchanged_income.3": "You’re retired.",
   "your_situation.unchanged_income.4": "You were a college or university student during the 2019-20 school year and now cannot find work.",
   "your_situation.unchanged_income.5": "You’re graduating high school in the 2019-20 school year and have applied for post-secondary education that will start before February 1, 2021.",
-  "your_situation.unchanged_income.none": "None of the above."
+  "your_situation.unchanged_income.none": "None of the above.",
+  "cerb.exhausted.1": "cerb.exhausted.1"
 }

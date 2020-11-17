@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-11-16
+* Updated question flow so that your-situation no income always leads to the gross-income question and your-situation some income leads to either the cerb-exhausted, gross-income, or rrif depending on option selected,
+* removed cerb question which asked if you have received cerb.
+* removed income level question
+* updated rules to calculate cerb and transition to EI
+* ran npm audit fix to fix vulnerabilities  
+
 ## 2020-10-28
 
 ### Changed

@@ -18,7 +18,7 @@ describe('Test redirects for no-income ', () => {
 
   const redirects = [
     {
-      dest: 'question-cerb',
+      dest: 'question-gross-income',
       values: [
         'lost-job',
         'employer-closed',
