@@ -24,7 +24,7 @@ jobs:
         run: npm run build --if-present
 
       - name: Run Cypress end-to-end and Report a11y
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         env:
           NODE_ENV: test
           A11Y_TRACKER_KEY: ${{ secrets.A11Y_TRACKER_KEY }}
