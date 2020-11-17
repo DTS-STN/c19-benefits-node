@@ -26,19 +26,20 @@ const postSomeIncome = (req, res) => {
       'selfemployed-some-income',
       'employed-lost-a-job',
       'child-or-dependent-school-closed',
+      'quarantine',
     ].includes(req.body.some_income)
   ) {
-    pruneSessionData(req, ['gross-income', 'rrif'])
-    return res.redirect(res.locals.routePath('question-reduced-income'))
-  }
-
-  if (['quarantine','none-of-the-above'].includes(req.body.some_income)) {
-    pruneSessionData(req, ['rrif', 'reduced-income', 'gross-income'])
-    return res.redirect(res.locals.routePath('question-cerb'))
-  }
-
-  if (req.body.some_income === 'retired') {
-    pruneSessionData(req, ['reduced-income'])
+    pruneSessionData(req, [ 'rrif'])
     return res.redirect(res.locals.routePath('question-gross-income'))
   }
+
+  else if (req.body.some_income === 'retired') {
+    return res.redirect(res.locals.routePath('question-rrif'))
+  }
+
+  else{
+    pruneSessionData(req, ['rrif', 'gross-income'])
+    return res.redirect(res.locals.routePath('question-cerb-exhausted'))
+  }
+
 }

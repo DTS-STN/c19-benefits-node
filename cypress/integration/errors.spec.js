@@ -38,10 +38,6 @@ describe('Error Pages', () => {
         testError('question-your-situation-unchanged-income', lang)
       })
 
-      it('CERB', () => {
-        testError('question-cerb', lang)
-      })
-
       it('CERB exhausted', () => {
         testError('question-cerb-exhausted', lang)
       })
@@ -67,9 +63,7 @@ describe('Error Pages', () => {
         testError('question-gross-income', lang)
       })
 
-      it('Reduced Income', () => {
-        testError('question-reduced-income', lang)
-      })
+
       it('DTC', () => {
         testError('question-dtc', lang)
       })

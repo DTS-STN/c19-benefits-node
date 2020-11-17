@@ -19,20 +19,23 @@ describe('Test redirects for some-income ', () => {
   const redirects = [
     {
       dest: 'question-gross-income',
-      values: ['retired'],
-    },
-    {
-      dest: 'question-reduced-income',
       values: [
         'hours-reduced',
         'selfemployed-some-income',
-        'child-or-dependent-school-closed',
         'employed-lost-a-job',
+        'child-or-dependent-school-closed',
+        'quarantine',
       ],
     },
     {
-      dest: 'question-cerb',
-      values: ['quarantine', 'none-of-the-above'],
+      dest: 'question-rrif',
+      values: [
+        'retired',
+      ],
+    },
+    {
+      dest: 'question-cerb-exhausted',
+      values: ['none-of-the-above'],
     },
   ]
 

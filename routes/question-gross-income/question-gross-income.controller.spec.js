@@ -15,7 +15,7 @@ test('Can send post request gross-income route ', async () => {
 
 test('Redirects to cerb route path 1', async () => {
   const route = app.routes.get('question-gross-income')
-  const dest = app.routes.get('question-cerb')
+  const dest = app.routes.get('question-mortgage-payments')
 
   await request(app)
     .post(route.path.en)
@@ -30,7 +30,7 @@ test('Redirects to cerb route path 1', async () => {
 
 test('Redirects to cerb route path 2', async () => {
   const route = app.routes.get('question-gross-income')
-  const dest = app.routes.get('question-cerb')
+  const dest = app.routes.get('question-cerb-exhausted')
 
   await request(app)
     .post(route.path.en)
