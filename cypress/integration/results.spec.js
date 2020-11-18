@@ -134,7 +134,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#dtcno')
         cy.reportA11y()
         cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
-        cy.get('#cerb')
+        cy.get('#ei_workshare')
         cy.get('#transition_to_ei')
       })
 
@@ -152,7 +152,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#dtcno')
         cy.reportA11y()
         cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
-        cy.get('#crb')
+        cy.get('#transition_to_ei')
         cy.get('#rrif')
       })
 

@@ -43,7 +43,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
       cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
-      cy.get('[data-cy=crb-benefit')
+      cy.get('[data-cy=transition_to_ei-benefit]')
       cy.get('[data-cy=rrif-benefit]')
 
       cy.visit('/en/your-situation/some-income')
@@ -55,7 +55,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
       cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
-      cy.get('[data-cy=crsb-benefit]')
+      cy.get('[data-cy=transition_to_ei-benefit]')
     })
 
     it('Check some-income retired to no-income', () => {
@@ -70,8 +70,9 @@ describe('Found Bugs', () => {
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
-      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '3')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '4')
       cy.get('[data-cy=crb-benefit')
+      cy.get('[data-cy=transition_to_ei-benefit]')
       cy.get('[data-cy=cerb-benefit]')
       cy.get('[data-cy=rrif-benefit]')
 
