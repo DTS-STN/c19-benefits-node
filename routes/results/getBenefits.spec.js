@@ -334,6 +334,31 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain("ei_workshare")
   })
 
+  test("lost some income + all other options + 499 or less shows ei only", () => {
+    const options = [
+        'selfemployed-some-income',
+        'employed-lost-a-job',
+        'retired',
+        'quarantine',
+        'child-or-dependent-school-closed',
+        'none-of-the-above',
+    ]
+
+    options.forEach((value) => {
+      const dataBody = {
+        lost_job: "lost-some-income",
+        no_income: value,
+        gross_income: "4999-or-less",
+      }
+
+      const result = getBenefits(dataBody)
+      expect(result.length).toBe(1)
+      expect(result).toContain("transition_to_ei")
+    })
+
+
+  })
+
   test("lost some income + reduced income + 5000 or more", () => {
     const result = getBenefits(
       {
@@ -415,13 +440,6 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('student_financial_aid')
   })
 
-  test('It should only pass if it matches everything in the pattern', () => {
-    const result = getBenefits({
-      lost_job: 'lost-some-income',
-    })
-
-    expect(result).toHaveLength(0)
-  })
 
   test('It checks provincial benefits', () => {
     const provinces = ['ab', 'bc', 'mb', 'nb', 'nl', 'ns', 'nt', 'nu', 'on', 'pe', 'qc', 'sk', 'yt']

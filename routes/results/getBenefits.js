@@ -64,26 +64,17 @@ const getBenefits = (data, featureFlags) => {
       {
         lost_job: "lost-some-income",
         some_income: [
+          "hours-reduced",
           "employed-lost-a-job",
           "selfemployed-some-income",
           "retired",
         ],
-      },
-      "crb",
-    ),
-  )
-
-  results.push(
-    match(
-      data,
-      {
-        lost_job: "lost-some-income",
-        some_income: "hours-reduced",
         gross_income: "over_5k",
       },
       "crb",
     ),
   )
+
 
   results.push(
     match(
@@ -106,6 +97,7 @@ const getBenefits = (data, featureFlags) => {
       {
         lost_job: "lost-some-income",
         some_income: 'child-or-dependent-school-closed',
+        gross_income: "over_5k",
       },
       "crcb",
     ),
@@ -129,6 +121,7 @@ const getBenefits = (data, featureFlags) => {
       {
         lost_job: "lost-some-income",
         some_income: 'quarantine',
+        gross_income: "over_5k",
       },
       "crsb",
     ),
@@ -149,9 +142,8 @@ const getBenefits = (data, featureFlags) => {
       data,
       {
         lost_job: "lost-some-income",
-        some_income: "hours-reduced",
       },
-      "ei_workshare",
+      "transition_to_ei",
     ),
   )
 
@@ -162,9 +154,10 @@ const getBenefits = (data, featureFlags) => {
         lost_job: "lost-some-income",
         some_income: "hours-reduced",
       },
-      "transition_to_ei",
+      "ei_workshare",
     ),
   )
+
 
   results.push(
     match(data, {
