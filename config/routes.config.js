@@ -26,10 +26,6 @@ const routes = [
   // 3a/b lost income fork
   { name: 'question-gross-income', path: { en: '/gross-income', fr: '/revenu-brut' } },
 
-  // qualified for cerb exhaust
-  { name: 'question-cerb-exhausted', path: { en: '/cerb-exhausted', fr: '/pcu-epuiser' } },
-
-
   // dtc fork
   { name: 'question-dtc-individual', path: { en: '/dtc-individual', fr: '/ciph-individuel' } },
   { name: 'question-dtc-child', path: { en: '/dtc-child', fr: '/ciph-enfant' } },

@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-12-02
+* removed cerb exhausted and rules leading to the calculation of cerb
+
 ## 2020-11-16
 * Updated question flow so that your-situation no income always leads to the gross-income question and your-situation some income leads to either the cerb-exhausted, gross-income, or rrif depending on option selected,
 * removed cerb question which asked if you have received cerb.

@@ -30,16 +30,13 @@ const postSomeIncome = (req, res) => {
     ].includes(req.body.some_income)
   ) {
     pruneSessionData(req, [ 'rrif'])
-    return res.redirect(res.locals.routePath('question-gross-income'))
+
   }
 
   else if (req.body.some_income === 'retired') {
     return res.redirect(res.locals.routePath('question-rrif'))
   }
 
-  else{
-    pruneSessionData(req, ['rrif', 'gross-income'])
-    return res.redirect(res.locals.routePath('question-cerb-exhausted'))
-  }
+  return res.redirect(res.locals.routePath('question-gross-income'))
 
 }
