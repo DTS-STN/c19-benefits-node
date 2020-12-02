@@ -25,6 +25,7 @@ describe('Test redirects for some-income ', () => {
         'employed-lost-a-job',
         'child-or-dependent-school-closed',
         'quarantine',
+        'none-of-the-above',
       ],
     },
     {
@@ -32,10 +33,6 @@ describe('Test redirects for some-income ', () => {
       values: [
         'retired',
       ],
-    },
-    {
-      dest: 'question-cerb-exhausted',
-      values: ['none-of-the-above'],
     },
   ]
 

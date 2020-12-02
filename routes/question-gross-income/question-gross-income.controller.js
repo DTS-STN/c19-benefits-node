@@ -11,9 +11,6 @@ module.exports = (app, route) => {
       }))
     })
     .post(route.applySchema(Schema), (req, res) => {
-      if(req.body.gross_income === "over_5k"){
-        return res.redirect(res.locals.routePath('question-cerb-exhausted'))
-      }
       return res.redirect(res.locals.routePath("question-mortgage-payments"))
     })
 }

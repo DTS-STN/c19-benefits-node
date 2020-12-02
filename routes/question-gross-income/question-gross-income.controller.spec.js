@@ -28,17 +28,3 @@ test('Redirects to cerb route path 1', async () => {
     })
 })
 
-test('Redirects to cerb route path 2', async () => {
-  const route = app.routes.get('question-gross-income')
-  const dest = app.routes.get('question-cerb-exhausted')
-
-  await request(app)
-    .post(route.path.en)
-    .send({
-      gross_income: 'over_5k',
-    })
-    .expect(302)
-    .then(response => {
-      expect(response.headers.location).toBe(dest.path.en)
-    })
-})

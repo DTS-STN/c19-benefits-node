@@ -158,19 +158,6 @@ const getBenefits = (data, featureFlags) => {
     ),
   )
 
-
-  results.push(
-    match(data, {
-      cerb_exhausted: "cerb-exhausted-almost",
-    }, "cerb"),
-  )
-
-  results.push(
-    match(data, {
-      cerb_exhausted: "cerb-exhausted-no",
-    }, "cerb"),
-  )
-
   results.push(
     match(data, { mortgage_payments: 'yes-mortgage' }, 'mortgage_deferral'),
   )
