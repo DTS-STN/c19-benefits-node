@@ -2,6 +2,8 @@
 All notable changes to this product will be documented in this file.
 
 ## 2020-12-02
+* Nothing has changed 
+## 2020-12-02
 * removed cerb exhausted and rules leading to the calculation of cerb
 
 ## 2020-11-16
