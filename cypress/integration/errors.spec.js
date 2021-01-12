@@ -47,21 +47,12 @@ describe('Error Pages', () => {
         testError('question-student-debt', lang)
       })
 
-      it('OAS', () => {
-        testError('question-oas', lang)
-      })
-
       it('RRIF', () => {
         testError('question-rrif', lang)
       })
 
       it('Gross Income', () => {
         testError('question-gross-income', lang)
-      })
-
-
-      it('DTC', () => {
-        testError('question-dtc', lang)
       })
     })
   })
