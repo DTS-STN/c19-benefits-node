@@ -13,8 +13,8 @@ const routes = [
   { name: 'question-mortgage-payments', path: { en: '/mortgage-payments', fr: '/paiement-hypothecaire' } },
   { name: 'question-student-debt', path: { en: '/student-debt', fr: '/dette-des-etudiants' } },
   { name: 'question-plans-for-school', path: { en: '/plans-for-school', fr: '/poursuivre-vos-etudes' } },
-  { name: 'question-oas', path: { en: '/oas', fr: '/sv' } },
-  { name: 'question-dtc', path: { en: '/dtc', fr: '/ciph' } },
+  // { name: 'question-oas', path: { en: '/oas', fr: '/sv' } },
+  // { name: 'question-dtc', path: { en: '/dtc', fr: '/ciph' } },
 
   { name: 'prepare', path: { en: '/prepare', fr: '/preparer' } },
   { name: 'results', path: { en: '/results', fr: '/resultats' } },
@@ -27,8 +27,8 @@ const routes = [
   { name: 'question-gross-income', path: { en: '/gross-income', fr: '/revenu-brut' } },
 
   // dtc fork
-  { name: 'question-dtc-individual', path: { en: '/dtc-individual', fr: '/ciph-individuel' } },
-  { name: 'question-dtc-child', path: { en: '/dtc-child', fr: '/ciph-enfant' } },
+  // { name: 'question-dtc-individual', path: { en: '/dtc-individual', fr: '/ciph-individuel' } },
+  // { name: 'question-dtc-child', path: { en: '/dtc-child', fr: '/ciph-enfant' } },
 
   // feedback
   { name: 'feedback', path: { en: '/feedback', fr: '/feedback' } },

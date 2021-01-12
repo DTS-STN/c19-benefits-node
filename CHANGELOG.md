@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-01-12
+
+### Removed
+* DTC and OAS routes have been removed
+
 ## 2020-12-02
 * removed cerb exhausted and rules leading to the calculation of cerb
 
