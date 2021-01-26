@@ -161,6 +161,17 @@ describe('Test the getBenefits calculator', () => {
     })
   })
 
+  test("lost all income + quarantine from international travel + don't show EI or CRB", () => {
+    const dataBody = {
+      lost_job: "lost-all-income",
+      no_income: "self-isolating-travel",
+    }
+
+    const result = getBenefits(dataBody)
+    expect(result).not.toContain("transition_to_ei")
+    expect(result).not.toContain("crb")
+  })
+
   test("lost some income + reduced income + 4999 or less shows ei + ei work sharing ", () => {
     const result = getBenefits(
       {
@@ -188,7 +199,7 @@ describe('Test the getBenefits calculator', () => {
     options.forEach((value) => {
       const dataBody = {
         lost_job: "lost-some-income",
-        no_income: value,
+        some_income: value,
         gross_income: "4999-or-less",
       }
 
@@ -213,6 +224,17 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain("transition_to_ei")
     expect(result).toContain("ei_workshare")
     expect(result).toContain("crb")
+  })
+
+  test("lost some income + quarantine from international travel + don't show EI or CRB", () => {
+    const dataBody = {
+      lost_job: "lost-some-income",
+      some_income: "self-isolating-travel",
+    }
+
+    const result = getBenefits(dataBody)
+    expect(result).not.toContain("transition_to_ei")
+    expect(result).not.toContain("crb")
   })
 
   test('It checks the mortgage addon', () => {
