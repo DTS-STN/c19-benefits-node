@@ -48,6 +48,16 @@ describe('Paths and Benefits', () => {
         cy.get('#transition_to_ei')
       })
 
+      it("CRB not available during quarantine from international travel", () => {
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
+        cy.answerRB('#lost_joblost-all-income')
+        cy.answerRB('#no_incomeself-isolating-travel')
+        cy.answerRB('#mortgage_paymentsno')
+        cy.answerRB('#student_debtno')
+        cy.answerRB('#plans_for_schoolno')
+        cy.get('[data-cy=eligible-benefit-list]').should('not.exist')
+      })
+
       it("CRCB", () => {
         cy.answerSelect('#province-select', provinceLookup('on', lang))
         cy.answerRB('#lost_joblost-all-income')
@@ -88,6 +98,16 @@ describe('Paths and Benefits', () => {
         cy.get('#transition_to_ei')
       })
 
+      it('EI Regular not available during quarantine after international travel', () => {
+        cy.answerSelect('#province-select', provinceLookup('on', lang))
+        cy.answerRB('#lost_joblost-some-income')
+        cy.answerRB('#some_incomeself-isolating-travel')
+        cy.answerRB('#mortgage_paymentsno')
+        cy.answerRB('#student_debtno')
+        cy.answerRB('#plans_for_schoolno')
+        cy.reportA11y()
+        cy.get('[data-cy=eligible-benefit-list]').should('not.exist')
+      })
 
       it('RRIF', () => {
         cy.answerSelect('#province-select', provinceLookup('on', lang))
