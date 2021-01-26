@@ -19,13 +19,23 @@ module.exports = (app, route) => {
 }
 
 const postNoIncome = (req, res) => {
-  // prune the paths you can't go down on this route
-  pruneSessionData(req, [
+
+  const prunePaths = [
     'some_income',
     'unchanged_income',
     'reduced-income',
     'rrif',
     'gross_income',
-  ])
-  return res.redirect(res.locals.routePath('question-gross-income'))
+    'mortgage_payments',
+  ]
+
+  let path = res.locals.routePath('question-gross-income')
+
+  if (req.body.no_income === 'self-isolating-travel'){
+    path = res.locals.routePath('question-mortgage-payments')
+  }
+
+  // prune the paths you can't go down on this route
+  pruneSessionData(req, prunePaths)
+  return res.redirect(path)
 }

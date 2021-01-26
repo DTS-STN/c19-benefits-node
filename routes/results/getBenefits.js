@@ -132,6 +132,18 @@ const getBenefits = (data, featureFlags) => {
       data,
       {
         lost_job: "lost-all-income",
+        no_income: [
+          'lost-job',
+          'employer-closed',
+          'self-employed-closed',
+          'child-or-dependent-school-closed',
+          'unpaid-leave-to-care',
+          'sick-or-quarantined',
+          'parental-recently-cant-return',
+          'student_2019_20',
+          'ei-recently-claim-ended',
+          'none-of-the-above',
+        ],
       },
       "transition_to_ei",
     ),
