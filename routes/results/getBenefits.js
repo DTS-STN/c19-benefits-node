@@ -154,6 +154,15 @@ const getBenefits = (data, featureFlags) => {
       data,
       {
         lost_job: "lost-some-income",
+        some_income: [
+          'hours-reduced',
+          'employed-lost-a-job',
+          'selfemployed-some-income',
+          'retired',
+          'quarantine',
+          'child-or-dependent-school-closed',
+          'none-of-the-above',
+        ],
       },
       "transition_to_ei",
     ),

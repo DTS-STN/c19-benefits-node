@@ -19,7 +19,18 @@ module.exports = (app, route) => {
 }
 
 const postSomeIncome = (req, res) => {
-  pruneSessionData(req, ['no_income', 'unchanged_income'])
+
+  const prunePaths = [
+    'no_income',
+    'unchanged_income',
+    'gross_income',
+    'mortgage_payments',
+  ]
+
+  let path = res.locals.routePath('question-gross-income')
+
+  pruneSessionData(req, prunePaths)
+
   if (
     [
       'hours-reduced',
@@ -32,11 +43,13 @@ const postSomeIncome = (req, res) => {
     pruneSessionData(req, [ 'rrif'])
 
   }
-
   else if (req.body.some_income === 'retired') {
-    return res.redirect(res.locals.routePath('question-rrif'))
+    path = res.locals.routePath('question-rrif')
+  }
+  else if (req.body.some_income === 'self-isolating-travel') {
+    path = res.locals.routePath('question-mortgage-payments')
   }
 
-  return res.redirect(res.locals.routePath('question-gross-income'))
+  return res.redirect(path)
 
 }
