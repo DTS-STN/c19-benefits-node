@@ -1,7 +1,12 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
-## 2020-01-12
+## 2021-01-26
+
+### Changed
+* Added a travel option to no income and some income situations. CRB and EI are not available when quarantining after travelling internationally
+
+## 2021-01-12
 
 ### Removed
 * DTC and OAS routes have been removed
