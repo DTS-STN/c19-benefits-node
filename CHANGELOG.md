@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2021-03-18
+
+### Changed
+* Updated text on CRB, CRCB, and CRSB result cards
+
 ## 2021-01-26
 
 ### Changed
