@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2021-03-29
+
+### Changed
+* Updated text about number of questions
+
 ## 2021-03-18
 
 ### Changed
