@@ -1,9 +1,17 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2021-07-07
+
+### Changed
+* Updated the amount for CRB and the number of weeks to 50
+
+### Removed
+* CERB has been removed
+
 ## 2021-06-30
 
-### Chnaged
+### Changed
 * Update CRB and CRCB from 38 weeks to 42 weeks
 
 ## 2021-03-29
